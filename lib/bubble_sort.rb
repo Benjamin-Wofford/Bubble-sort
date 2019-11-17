@@ -5,18 +5,15 @@ require "byebug"
 def bubble_sort(array)
     sorted = false
 
-    debugger
-
-   while sorted == false
+   while !sorted
+        sorted = true
 
         (0...array.length - 1).each do |number|
-            sorted = true
-
-            if array[number] < array[number + 1]
-            array[number], array[number + 1] = array[number + 1], array[number]
-            sorted = false
+            
+            if array[number] > array[number + 1]
+                array[number], array[number + 1] = array[number + 1], array[number]
+                sorted = false
             end
-
         end
     end
 
